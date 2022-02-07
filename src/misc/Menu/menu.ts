@@ -5,12 +5,7 @@ export const menuItems: Menu = [
     title: 'Home',
     url: '/'
   },
-  {
-    type: 'ExampleMenuItem',
-    slug: 'getting-started',
-    title: 'Getting Started',
-    replUrl: 'https://svelte.dev/repl/14f38c03710945b797d0c421f55e4373?version=3.46.2'
-  },
+
   {
     type: 'SubMenuMenuItem',
     slug: 'reference',
@@ -21,6 +16,12 @@ export const menuItems: Menu = [
   {
     type: 'SubMenuMenuItem',
     menuItems: [
+      {
+        type: 'ExampleMenuItem',
+        slug: 'basic-example',
+        title: 'Basic Example',
+        replUrl: 'https://svelte.dev/repl/14f38c03710945b797d0c421f55e4373?version=3.46.2'
+      },
       {
         type: 'SubMenuMenuItem',
         title: 'Components',

@@ -6,6 +6,7 @@
 html,
 body {
   font-size: 18px;
+  @apply text-dark-grayish;
 }
 
 h1 {
@@ -34,4 +35,8 @@ h6 {
 
 p {
   @apply text-base my-1;
+}
+
+.content p {
+  @apply max-w-prose;
 }
