@@ -25,22 +25,16 @@
 
   <p>
     Threlte is a component library for svelte to build and render three.js scenes declaratively and
-    state-driven in Svelte apps.
+    state-driven in Svelte apps.<br />
+    Threlte is inspired by the sensible defaults of
+    <a href="https://github.com/pmndrs/react-three-fiber">react-three-fiber</a>, the simplicity and
+    effectiveness of <a href="https://svelte.dev/">Sveltes reactivity model</a> and
+    <a href="https://svelte-cubed.vercel.app/">Svelte Cubed</a>.<br />
+    It provides strictly typed components to quickly and easily build three.js scenes with deep reactivity
+    and interactivity out-of-the-box.<br />
+    It also aims to provide the building blocks to quickly extend threlte when it's needed.
   </p>
 
-  <p>
-    It's inspired by the sensible defaults of react-three-fiber, the simplicity and effectiveness of
-    Sveltes reactivity model and Svelte Cubed.
-  </p>
-
-  <p>
-    It provides strictly typed components to quickly and easily build three.js scenes with deep
-    reactivity and interactivity out-of-the-box.
-  </p>
-
-  <p>It also aims to provide the building blocks to quickly extend threlte when it's needed.</p>
-
-  <p>It also aims to provide the building blocks to quickly extend threlte when it's needed.</p>
   <div class="flex flex-row justify-center items-center">
     <Canvas size={{ width: 600, height: 600 }}>
       <OrthographicCamera

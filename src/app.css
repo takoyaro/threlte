@@ -37,6 +37,16 @@ p {
   @apply text-base my-1;
 }
 
-.content p {
-  @apply max-w-prose;
+.content {
+  p {
+    @apply max-w-prose;
+  }
+
+  a {
+    @apply text-orange;
+
+    &:hover {
+      @apply underline;
+    }
+  }
 }
