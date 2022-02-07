@@ -23,7 +23,9 @@
       "$components": ["src/components"],
       "$components/*": ["src/components/*"],
       "$examples": ["src/examples"],
-      "$examples/*": ["src/examples/*"]
+      "$examples/*": ["src/examples/*"],
+      "$misc": ["src/misc"],
+      "$misc/*": ["src/misc/*"]
     }
   },
   "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
