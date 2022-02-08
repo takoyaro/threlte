@@ -2,7 +2,7 @@
   import Header from '$components/Header.svelte/Header.svelte'
   import MenuComponent from '$components/Menu/Menu.svelte'
   import '../app.css'
-  import { menuItems } from '$misc/Menu/menu'
+  import { menuItems } from '$misc/xxx/menu'
 </script>
 
 <Header />

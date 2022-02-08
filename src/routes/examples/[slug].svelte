@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores'
-  import { findMenuItemBySlug } from '$misc/Menu/findBySlugInMenuItems'
+  import { findMenuItemBySlug } from '$misc/xxx/findBySlugInMenuItems'
 
   let ex = findMenuItemBySlug($page.params.slug)
   $: ex = findMenuItemBySlug($page.params.slug)
