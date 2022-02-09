@@ -1,14 +1,19 @@
+import { mdsvex } from 'mdsvex'
 import adapter from '@sveltejs/adapter-auto'
-import preprocess from 'svelte-preprocess'
-import { resolve } from 'path'
 import { threeMinifier } from '@yushijinhun/three-minifier-rollup'
+import { resolve } from 'path'
+import preprocess from 'svelte-preprocess'
+import mdsvexConfig from './mdsvex.config.js'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+  extensions: ['.svelte', ...mdsvexConfig.extensions],
+
   preprocess: [
     preprocess({
       postcss: true
-    })
+    }),
+    mdsvex(mdsvexConfig)
   ],
 
   kit: {
@@ -29,7 +34,8 @@ const config = {
           threlte: resolve('src/lib'),
           $components: resolve('src/components'),
           $examples: resolve('src/examples'),
-          $misc: resolve('src/misc')
+          $misc: resolve('src/misc'),
+          $pages: resolve('src/pages')
         }
       },
       ssr: {

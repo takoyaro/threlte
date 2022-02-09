@@ -7,6 +7,19 @@ export const menuItems: Menu = [
   },
 
   {
+    type: 'BasicMenuItem',
+    slug: 'getting-started',
+    title: 'Getting Started',
+    url: '/getting-started'
+  },
+  {
+    type: 'BasicMenuItem',
+    slug: 'concepts',
+    title: 'Concepts',
+    url: '/concepts'
+  },
+
+  {
     type: 'SubMenuMenuItem',
     slug: 'reference',
     title: 'Reference',
