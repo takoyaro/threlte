@@ -1,12 +1,12 @@
 <script lang="ts">
   import PerspectiveCamera from '$lib/cameras/PerspectiveCamera.svelte'
   import Canvas from '$lib/Canvas.svelte'
-  import OrbitControls from '$lib/controls/OrbitControls.svelte'
   import { useRaf } from '$lib/hooks/useRaf'
   import MeshInstance from '$lib/instances/MeshInstance.svelte'
   import Group from '$lib/objects/Group.svelte'
   import Instance from '$lib/objects/Instance.svelte'
   import InstancedMesh from '$lib/objects/InstancedMesh.svelte'
+  import { onMount } from 'svelte'
   import { BoxBufferGeometry, Mesh, MeshBasicMaterial, Vector3 } from 'three'
   import { DEG2RAD } from 'three/src/math/MathUtils'
 
@@ -22,12 +22,13 @@
       color: 'blue'
     })
   )
-  const meshRed = new Mesh(
-    new BoxBufferGeometry(1, 1, 1),
-    new MeshBasicMaterial({
-      color: 'red'
-    })
-  )
+
+  let groupPos = 1
+  onMount(() => {
+    setTimeout(() => {
+      groupPos = -1
+    }, 1e3)
+  })
 
   let posX = 0
   useRaf(() => {
@@ -48,18 +49,16 @@
 
 <div>
   <Canvas>
-    <PerspectiveCamera position={{ z: 10, y: 10, x: 10 }} lookAt={meshBlue}>
-      <OrbitControls />
-    </PerspectiveCamera>
+    <PerspectiveCamera position={{ z: 10, y: 10, x: 10 }} lookAt={meshBlue} />
 
     <InstancedMesh {geometry} {material}>
-      <Group scale={1.6} position={{ x: 1 }}>
+      <Group scale={1.6} position={{ x: groupPos }}>
         <Group rotation={{ x: DEG2RAD * 70 }}>
           <Group position={{ z: 2 }}>
             <Group rotation={{ x: DEG2RAD * -180 }}>
               <Group position={{ y: 1 }}>
                 <MeshInstance mesh={meshBlue} />
-                <Instance scale={1.0001} />
+                <Instance scale={1.1} />
               </Group>
             </Group>
           </Group>

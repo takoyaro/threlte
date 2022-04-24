@@ -55,11 +55,10 @@
 </div>
 
 <div class="test-details">
-  <button on:click={() => (translate = !translate)}> translate cube </button>
-  <p>events:</p>
-  {#each Object.entries(eventCount) as [key, value]}
-    <p>{key}: {value}</p>
-  {/each}
+  <button on:click={() => (translate = !translate)}>translate cube</button>
+  <div class="playwright-test-result">
+    {JSON.stringify(eventCount)}
+  </div>
 </div>
 
 <style>
